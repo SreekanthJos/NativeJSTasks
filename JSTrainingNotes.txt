@@ -1,0 +1,31 @@
+Javascript Constructor sholud be Pascal casing.
+function Rectangle(x,y)
+{
+this.x=x;
+this.y=y;
+}
+var rectangle=new Rectangle(10,20);
+
+-Hoisting
+--function decalration , hoisting happens with function decalrations only.
+function add()
+{
+}
+
+--anonymous functions
+varaiblename=function([params])
+{
+}
+
+--named function expression
+variablename=function functionname([params])
+{
+}
+
+--Function
+variableName=new Function(functionBody);
+Ex: var add =new Function("x","y","return x+y");
+
+
+
+
