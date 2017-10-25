@@ -3,16 +3,16 @@ function digit(val) {
         return func ? func(val) : val;
     }
 }
-var zero = digit(0);
-var one = digit(1);
-var two = digit(2);
-var three = digit(3);
-var four = digit(4);
-var five = digit(5);
-var six = digit(6);
-var seven = digit(7);
-var eight = digit(8);
-var nine = digit(9);
+var zero = digit(0),
+ one = digit(1),
+ two = digit(2)
+ three = digit(3)
+ four = digit(4),
+ five = digit(5),
+ six = digit(6),
+ seven = digit(7),
+ eight = digit(8),
+ nine = digit(9);
 
 function plus(b) {
     return function (a) { return a + b; }
