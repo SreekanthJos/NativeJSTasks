@@ -1,3 +1,8 @@
 function countWords(str) {
-  return str.trim().split(/\s+/).filter(function(val){return val;}).length;
+  var words=str.trim().split(/\s+/);
+  var result=words.filter(
+    function(val){
+      return val;
+    });
+  return result.length;
 }
