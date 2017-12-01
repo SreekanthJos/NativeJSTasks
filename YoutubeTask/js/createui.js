@@ -125,7 +125,18 @@ function displayTiles(){
         fragment.appendChild(div);
         body.appendChild(fragment);
     }
-    
+    function addEvent(li){
+        li.addEventListener('click', function (event) {
+            event.target.parentNode.childNodes.forEach(function (element) {
+                element.classList.remove("selected");
+            });
+            event.target.classList.add("selected");
+            options.currentPageIndex = parseInt(event.target.attributes["pageindex"].value);
+            displayTiles();
+        });
+        return li;
+    }
+
     function createPager() {
         var body = document.body,
             ul = document.createElement('ul'),
@@ -133,22 +144,21 @@ function displayTiles(){
             li = null;
         
         pagecount = Math.round(options.totalItems.length / options.pageSize);
-        
+        li = document.createElement("li");
+        li.appendChild(document.createTextNode('<<'));
+        li.setAttribute("pageindex", 0); 
+        ul.appendChild(addEvent(li));
+
         for (var i = 0; i < pagecount; i++) {
             li = document.createElement("li");
-            li.setAttribute("pageindex", i)
-            li.appendChild(document.createTextNode(i + 1));
-            li.addEventListener('click', function (event) {
-                event.target.parentNode.childNodes.forEach(function (element) {
-                    element.classList.remove("selected");
-                });
-                event.target.classList.add("selected");
-                options.currentPageIndex = parseInt(event.target.attributes["pageindex"].value);
-                displayTiles();
-            });
-            ul.appendChild(li);
+            li.setAttribute("pageindex", i);          
+            li.appendChild(document.createTextNode(i + 1));           
+            ul.appendChild(addEvent(li));
         }
-
+        li = document.createElement("li");
+        li.appendChild(document.createTextNode('>>'));
+        li.setAttribute("pageindex", 3); 
+        ul.appendChild(addEvent(li));
         ul.className = "pager";
         ul.childNodes.forEach(function (childNode) {
             if (childNode.attributes["pageindex"].value == options.currentPageIndex) {
@@ -156,7 +166,6 @@ function displayTiles(){
                 return;
             }
         });
-
         if (pagerDiv != null) {
             while (pagerDiv.firstChild) {
                 pagerDiv.removeChild(pagerDiv.firstChild);
