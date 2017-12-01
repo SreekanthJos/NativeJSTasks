@@ -1,16 +1,46 @@
 <html>
-    <head>
 
-        
-    </head>
+<head>
+
+
+    <link type="text/css" href="css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/http.js"></script>
+    <script type="text/javascript" src="js/service.js"></script>
+    <script type="text/javascript" src="js/createui.js"></script>
+    <script src="https://use.fontawesome.com/b7f31becbd.js"></script>
+</head>
+
 <body>
+    <template id="template">
+        <div id="container">
+            <ul class="tiles"></ul>
+        </div>
+    </template>
+    <template id="tileTemplate">
+        <li class="tile">
+            <div class="content">
+                <div class="divImg"><img class="videoImg"></img>
+                </div>
+                <div class="row">
+                    <div class="icon"><i class="fa fa-male fa-lg" aria-hidden="true"></i></div>
+                    <div class="col"><label class="title"></label></div>
+                </div>
+                <div class="row">
+                    <div class="icon"><i class="fa fa-calendar fa-lg" aria-hidden="true"></i></div>
+                    <div class="col"><label class="publishedDate"></label></div>
+                </div>
+                <div class="row">
+                    <div class="icon"><i class="fa fa-eye fa-lg" aria-hidden="true"></i></div>
+                    <div class="col"><label class="viewsCount"></label></div>
+                </div>
+                <div class="row">
+                    <div class="col-full"><label class="description"></label></div>
+                </div>
+                </ul>
+        </li>
+    </template>
 
-   <div id="main">
-      
-   </div>
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="index.js"></script>
-    <script type="text/javascript" src="api.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
+
 </html>
