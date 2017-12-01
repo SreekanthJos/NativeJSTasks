@@ -53,11 +53,7 @@ ul.tiles{
 .pager{
     text-align: center;
 }
-.pager>li>span{
-  
-    border-radius: 50% !important;
-    margin: 0 5px;  
-}
+
 .pager li{
     display: inline-block;
     margin: 2px 5px;
