@@ -1,5 +1,12 @@
-describe('Concatenate strings',function(){
-    it("should return concatenates string",function(){
-        expect(concatenateString('Native','Javascript')).toEqual('NativeJavascript');
+describe('Search Youtube', function () {
+   
+    it('get youtube results', function (done) {
+        var promise = myApp.service.search('you');
+        promise.then(function (data) {
+            done();
+            expect(data.items.length).toEqual(15);
+        });
     });
+
+  
 });

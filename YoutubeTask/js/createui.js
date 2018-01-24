@@ -115,6 +115,7 @@ function displayTiles(){
         searchBox.setAttribute('placeholder', 'search');
 
         searchButton.setAttribute("type", "button");
+        searchButton.setAttribute("id", "btnSearch");
         searchButton.setAttribute("value", "Search");
         searchButton.addEventListener('click', function (e) {
             onSearch(searchBox.value);

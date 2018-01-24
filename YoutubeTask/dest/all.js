@@ -115,6 +115,7 @@ function displayTiles(){
         searchBox.setAttribute('placeholder', 'search');
 
         searchButton.setAttribute("type", "button");
+        searchButton.setAttribute("id", "btnSearch");
         searchButton.setAttribute("value", "Search");
         searchButton.addEventListener('click', function (e) {
             onSearch(searchBox.value);
@@ -250,6 +251,36 @@ myApp.main = (function (service, ui) {
     init();
 })(myApp.service, myApp.ui);
 
+MathUtils=function(){};
+MathUtils.prototype.sum = function(number1, number2) {
+        return number1 + number2;
+}
+ 
+MathUtils.prototype.substract = function(number1, number2) {
+    return number1 - number2;
+}
+ 
+MathUtils.prototype.multiply = function(number1, number2) {
+    return number1 * number2;
+}
+ 
+MathUtils.prototype.divide = function(number1, number2) {
+    return number1 / number2;
+}
+ 
+MathUtils.prototype.average = function(number1, number2) {
+    return (number1 + number2) / 2;
+}
+ 
+MathUtils.prototype.factorial = function(number) {
+    if (number < 0) {
+        throw new Error("There is no factorial for negative numbers");
+    } else if (number == 1 || number == 0) {
+        return 1;
+    } else {
+        return number * this.factorial(number - 1);
+    }
+}
 var myApp = myApp || {};
 var VIDEO_URL = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyCTWC75i70moJLzyNh3tt4jzCljZcRkU8Y&type=video&part=snippet&maxResults=15&q='
 var STATS_URL = 'https://www.googleapis.com/youtube/v3/videos?key=AIzaSyCTWC75i70moJLzyNh3tt4jzCljZcRkU8Y&id='
@@ -290,7 +321,3 @@ myApp.service = (function (http) {
         search: search
     }
 })(myApp.http);
-function concatenateString(str1,str2)
-{
-    return str1 + str2;
-}
