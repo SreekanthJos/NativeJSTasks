@@ -11,6 +11,17 @@ describe('Verify search service execution', function () {
     
  });
 
+describe('Testing spies', function () {
+    it('Should spy on serach service response', function () {
+            spyOn(myApp.service, 'search').and.callFake(function () {
+            return "Hello";
+        });
+        var response = myApp.service.search('you');
+        expect(response).toEqual("Hello");
+    });
+
+});
+
 describe('Search Youtube', function () {
    
     it('get youtube results', function (done) {
